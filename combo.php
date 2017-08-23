@@ -46,6 +46,30 @@ pour chaque move
 			case 'u/f':
 				$dir=true;
 				break;
+			case 'QCF':
+				$dir=true;
+				break;
+			case 'QCB':
+				$dir=true;
+				break;
+			case 'CD':
+				$dir=true;
+				break;
+			case 'qcf':
+				$dir=true;
+				break;
+			case 'qcb':
+				$dir=true;
+				break;
+			case 'cd':
+				$dir=true;
+				break;
+			case 'ws':
+				$dir=true;
+				break;
+			case 'WS':
+				$dir=true;
+				break;
 			default:
 				$dir=false;
 		}
@@ -112,17 +136,73 @@ function topictures($array_in){
 		case 'u/f':
 			$img = "Images/uf.png";
 			break;
+		case 'n':
+			$img = "Images/n.png";
+			break;
 		case 'F':
 			$img = "Images/holdf.png";
 			break;
-		case 'UF':
+		case 'U/F':
 			$img = "Images/holduf.png";
 			break;
-		case 'DF':
+		case 'D/F':
 			$img = "Images/holddf.png";
 			break;
-		case 'DB':
+		case 'D/B':
 			$img = "Images/holddb.png";
+			break;
+		case 'QCF':
+			$img = "Images/d.png";
+			print '<img src="'.$img.'" alt="'.$move.'" />';
+			$img = "Images/df.png";
+			print '<img src="'.$img.'" alt="'.$move.'" />';
+			$img = "Images/f.png";
+			break;
+		case 'QCB':
+			$img = "Images/d.png";
+			print '<img src="'.$img.'" alt="'.$move.'" />';
+			$img = "Images/db.png";
+			print '<img src="'.$img.'" alt="'.$move.'" />';
+			$img = "Images/b.png";
+			break;	
+		case 'CD':
+			$img = "Images/f.png";
+			print '<img src="'.$img.'" alt="'.$move.'" />';
+			$img = "Images/n.png";
+			print '<img src="'.$img.'" alt="'.$move.'" />';
+			$img = "Images/d.png";
+			print '<img src="'.$img.'" alt="'.$move.'" />';
+			$img = "Images/df.png";
+			break;
+		// minuscules sur qcf qcb cd
+		case 'qcf':
+			$img = "Images/d.png";
+			print '<img src="'.$img.'" alt="'.$move.'" />';
+			$img = "Images/df.png";
+			print '<img src="'.$img.'" alt="'.$move.'" />';
+			$img = "Images/f.png";
+			break;
+		case 'qcb':
+			$img = "Images/d.png";
+			print '<img src="'.$img.'" alt="'.$move.'" />';
+			$img = "Images/db.png";
+			print '<img src="'.$img.'" alt="'.$move.'" />';
+			$img = "Images/b.png";
+			break;	
+		case 'cd':
+			$img = "Images/f.png";
+			print '<img src="'.$img.'" alt="'.$move.'" />';
+			$img = "Images/n.png";
+			print '<img src="'.$img.'" alt="'.$move.'" />';
+			$img = "Images/d.png";
+			print '<img src="'.$img.'" alt="'.$move.'" />';
+			$img = "Images/df.png";
+			break;
+		case 'ws':
+			$img = "Images/ws.png";
+			break;
+		case 'WS':
+			$img = "Images/ws.png";
 			break;
 		// On passe aux boutons			
 		case '1':
