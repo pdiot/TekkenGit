@@ -4,7 +4,9 @@
 	<head>
 		<meta charset="utf-8" />
         <link rel="stylesheet" href="combo.css" />
-        <title>Combo out</title>
+		<link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet'>		
+		<link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+        <title>Tekken custom combo visualizer</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="JS/blob.js"></script>
 		<script src="JS/canvas-toblob.js"></script>
@@ -12,26 +14,114 @@
 		<script src="JS/html2canvas.js"></script>
 		<script src="combos2.js"></script>
 	</head>
-	
+	<content>
 	<body>
-
-		<h2>Combo translator</h2>
-
-
-
-		<form>
-		  Combo description: <input type="text" id="comboString" name="combo_string"><br>
-		</form>
-		<button id="btnGen" class="btnGen" onclick="main()"> Combo JS </button>
-
-		<div id="debug"></div>
-		<div id="comboVisual">
-		
+		<div id="centerContainer">
+			<form id="topform" class="form">
+				<div class="topText" > COMBO SAMPLER </div>
+				<br/>			  
+				<input type="text" id="comboString" name="combo_string"><br>
+			</form>
+			
+			
+			<div id="debug"></div>
+			<div id="comboVisual"></div>
+			<div id="buttonsGroup">
+				<button id="btnGen" class="btnGen" onclick="main()"> Be pretty</button>		
+				<button type="button" id="btnSave" class="btnSave" value="Save as PNG"> Save as PNG </button>
+				<button type="button" onclick="location.href='TekkenCombos.html';" value ="Reset window"> Reset window </button>
+			</div>
+			<div id="manual">
+				<h1> WHAT KIND OF SORCERY IS THIS ? </h1>
+				<p class="manual"> 
+				This is a tool for you to have a nicer time working on your Tekken (or any other 4 button game really) combos.
+				You fill in the text bar on top, click on the "Be pretty" button, and look at your prettified combo. 
+				If you want, you can then download it by clicking on the "Save as PNG" button.
+				</p>
+				<h1> BUT HOW DO I WRITE MY STUFF IN ? </h1>
+				<p class="manual" id="man2"> 
+				
+				This tool reads the inputs as they're commonly used in the tekken community, with a few limitations to ensure 
+				it understands what you write. See the table below for what associations are used.
+				<br/>				
+				You can also use a + sign between a direction and any button input (even one with a + sign in it !). It's merely a convenience thing,
+				but it means both d/f 1 and d/f+1 for example are valid inputs for the same end result.				
+				<br/>
+				Finally, you need something to distinguish between your inputs. This tool uses either comma (",") or space (" ") as a separator.
+				Either will work, so use whichever you're more confortable with.
+				</p>
+				
+				<div class="manual" id="manualTables">
+					<div class="manTableCell">forward </div>
+					<div class="manTableCell">back </div>
+					<div class="manTableCell">down </div>
+					<div class="manTableCell">down + forward </div>
+					<div class="manTableCell">down + back	 </div>
+					<div class="manTableCell">up + forward </div>
+					<div class="manTableCell">forward and hold </div>
+					<div class="manTableCell">up forward and hold	 </div>
+					<div class="manTableCell">down forward and hold </div>
+					<div class="manTableCell">down back and hold	 </div>
+					<div class="manTableCell">neutral </div>
+					<div class="manTableCell">1 / left punch </div>
+					<div class="manTableCell">f </div>
+					<div class="manTableCell">b </div>
+					<div class="manTableCell">d </div>
+					<div class="manTableCell">d/f </div>
+					<div class="manTableCell">d/b </div>
+					<div class="manTableCell">u/f </div>
+					<div class="manTableCell">F </div>
+					<div class="manTableCell">U/F </div>
+					<div class="manTableCell">D/F </div>
+					<div class="manTableCell">D/B </div>
+					<div class="manTableCell">n </div>
+					<div class="manTableCell">1 </div>
+					<div class="manTableCell">2 / right punch </div>
+					<div class="manTableCell">3 / left kick </div>
+					<div class="manTableCell">4 / right kick </div>
+					<div class="manTableCell">1+2 </div>
+					<div class="manTableCell">1+3 </div>
+					<div class="manTableCell">1+4 </div>
+					<div class="manTableCell">2+3 </div>
+					<div class="manTableCell">2+4 </div>
+					<div class="manTableCell">3+4 </div>
+					<div class="manTableCell">1+2+3 </div>
+					<div class="manTableCell">1+2+4 </div>
+					<div class="manTableCell">1+2+3+4 </div>
+					<div class="manTableCell">2 </div>
+					<div class="manTableCell">3 </div>
+					<div class="manTableCell">4 </div>
+					<div class="manTableCell">1+2 </div>
+					<div class="manTableCell">1+3 </div>
+					<div class="manTableCell">1+4 </div>
+					<div class="manTableCell">2+3 </div>
+					<div class="manTableCell">2+4 </div>
+					<div class="manTableCell">3+4 </div>
+					<div class="manTableCell">1+2+3 </div>
+					<div class="manTableCell">1+2+4 </div>
+					<div class="manTableCell">1+2+3+4 </div>
+				
+				</div>
+				
+				<h1> ARE THERE ANY QUALITY OF LIFE THINGS I SHOULD KNOW ? </h1>
+				<p class="manual">	
+					Why yes there are, actually. 
+					<br/>				
+					You can use the semicolon (";") like you would use another input to get a visual separator (useful to distinguish between strings in a combo, for example).
+					<br/>				
+					You can also use ws (or WS) to get a neat little icon for While Standing moves.
+					<br/>			
+					Quarter circle forward and back are in (QCF / qcf and QCB / qcb respectively), as is Crouch Dash (CD / cd), so it's just this little bit easier to use.
+					<br/>
+					As far as using your .pngs goes, I'd like to recommend 2 little pieces of software. First, some sort of Window-On-Top software, 
+					so you can get your combo to stay on top of the Tekken window when playing. I like <a href="https://efotinis.neocities.org/deskpins/">DeskPins</a>, easy to use, goes in your system notification area.
+					<br/>
+					Then, you'll want a really minimalist image viewer so you don't lose too much space on your screen. I like <a href="http://www.softpedia.com/get/Multimedia/Graphic/Graphic-Viewers/pViewer.shtml">pViewer</a> for this. No menu, everything is done via mouse clicks, so you don't lose any more space than you need to.
+					<br/>
+				</p>
+				
+			</div>
 		</div>
-		
-		<button type="button" id="btnSave" class="btnSave" value="Save PNG"> Save as PNG </button>
-		<form action="TekkenCombos.html">
-		<input type="submit" value="Reset window" />
-		</form>
 	</body>
+	</content>
 </html> 

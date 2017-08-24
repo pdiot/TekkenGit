@@ -3,8 +3,102 @@
 	padding-left:30px;
 	padding-top:15px;
 	padding-bottom:5px;
+	text-align: left;
 }
 
-.content {
-	width:1490px;	
+body {
+	width:100%;
+	text-align:center;
+	background-color: #8d9bb2;
+}
+
+#centerContainer {
+	width: 1490px;
+	text-align:center;
+	margin: 0px auto;	
+}
+
+
+input[type=text] {
+	width: 60%;
+	padding: 12px 20px;
+	margin: 8px 0;
+    box-sizing: border-box;
+	font-size: 18px;
+	background-color: lightblue;
+	border: 3px solid #efc909;
+	border-radius:6px;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.topText {
+	font-family: 'Monoton';font-size: 66px;
+	color: #fff;
+    text-shadow: #efc909 1px 2px 2px;
+    -webkit-font-smoothing: antialiased;
+}
+
+button {
+	width: 18%;
+	padding: 12px 20px;
+	box-sizing: border-box;
+	font-size: 24px;
+	font-family: 'Monoton';
+	color: #fff;
+    text-shadow: #efc909 0px 1px 1px;
+	background-color: #5e6877;
+	border: 1px solid #efc909;
+	border-radius: 2px;
+}
+
+#manual {
+	margin:auto;
+	width:85%;
+	background-color:#7e8691;
+	border: 2px solid #c4a405;
+	border-radius: 6px;	
+}
+
+h1 {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.manual {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	width:90%;
+	margin:auto;
+	padding: 10px 15px 10px 15px;
+}
+
+#manualTables {
+	width: 90%;
+	margin:auto;
+	border: 1px solid #c4a405;
+	border-radius: 6px;	
+	column-count: 4;
+	column-gap: 25px;
+	column-rule: 2px outset #efc909;
+	background-color: #5e6877;
+}
+
+.manTableCell {
+	width:100%;
+	color:lightgray; 
+	font-family: 'Source Code Pro';font-size: 16px;
+}
+
+#buttonsGroup {
+	padding : 10px 15px 10px 15px;
+}
+
+
+table {
+	width:45%;
+	
 }
