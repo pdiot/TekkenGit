@@ -118,113 +118,102 @@ function validatePlus(stringIn) {// Handles the + signs
 	return tmp;	
 }
 
+function addPicture(string, pic, alt) { // returns string + the picture element at the end
+	var tmp = string + "<img src="+pic+" alt="+alt+" />";
+	return tmp;
+}
+
 function comboToImage(arr) { // reads an array of valid inputs, and add the corresponding pictures to our <div>
 	// <div id="comboVisual">
 	var comboString = "<p id='combo' class='combo'>";
 	// debug("Contenu de l'array à transformer en image : " + arr.toString());
 	var x;
 	var inputx;
-	var pic;
 	for (x in arr) {
 		inputx = arr[x];
-		pic = "";
 		//window.alert("comboToImage, input numéro : " + x +", contenu de inputx entre . : ."+inputx+".");
 		if ((validDirections.indexOf(String(inputx))) > -1) { 	// our input is a valid direction 
 			switch (String(inputx)) {
 				case "f":
-					pic = "Images/f.png";
+					comboString = addPicture(comboString, "Images/f.png", inputx);
 					break;
 				case "b":
-					pic = "Images/b.png";
+					comboString = addPicture(comboString, "Images/b.png", inputx);
 					break;
 				case "d":
-					pic = "Images/d.png";
+					comboString = addPicture(comboString, "Images/d.png", inputx);
 					break;
 				case "d/f":
-					pic = "Images/df.png";
+					comboString = addPicture(comboString, "Images/df.png", inputx);
 					break;
 				case "d/b":
-					pic = "Images/db.png";
+					comboString = addPicture(comboString, "Images/db.png", inputx);
 					break;
 				case "u/f":
-					pic = "Images/uf.png";
+					comboString = addPicture(comboString, "Images/uf.png", inputx);
 					break;
 				case "u/b":
-					pic = "Images/ub.png";
+					comboString = addPicture(comboString, "Images/ub.png", inputx);
 					break;
 				case "F":
-					pic = "Images/holdf.png";
+					comboString = addPicture(comboString, "Images/holdf.png", inputx);
 					break;
 				case "D/F":
-					pic = "Images/holddf.png";
+					comboString = addPicture(comboString, "Images/holddf.png", inputx);
 					break;
 				case "D/B":
-					pic = "Images/holddb.png";
+					comboString = addPicture(comboString, "Images/holddb.png", inputx);
 					break;
 				case "U/F":
-					pic = "Images/holduf.png";
+					comboString = addPicture(comboString, "Images/holduf.png", inputx);
 					break;
 				case "n":
-					pic = "Images/n.png";
+					comboString = addPicture(comboString, "Images/n.png", inputx);
 					break;
 				case ";":
-					pic = "Images/into.png";
+					comboString = addPicture(comboString, "Images/into.png", inputx);
 					break;
 				case "ws":
-					pic = "Images/ws.png";
+					comboString = addPicture(comboString, "Images/ws.png", inputx);
 					break;
 				case "WS":
-					pic = "Images/ws.png";
+					comboString = addPicture(comboString, "Images/ws.png", inputx);
 					break;
 				// The later "directions" are shortcuts for successive directions, so we'll start writing them down in here
 				case "qcf":
-					pic = "Images/d.png";
-					comboString = comboString + "<img src="+pic+" alt="+inputx+" />";
-					pic = "Images/df.png";
-					comboString = comboString + "<img src="+pic+" alt="+inputx+" />";
-					pic = "Images/f.png";
+					comboString = addPicture(comboString, "Images/d.png", inputx);
+					comboString = addPicture(comboString, "Images/df.png", inputx);
+					comboString = addPicture(comboString, "Images/f.png", inputx);
 					break;
 				case "QCF":
-					pic = "Images/d.png";
-					comboString = comboString + "<img src="+pic+" alt="+inputx+" />";
-					pic = "Images/df.png";
-					comboString = comboString + "<img src="+pic+" alt="+inputx+" />";
-					pic = "Images/f.png";
+					comboString = addPicture(comboString, "Images/d.png", inputx);
+					comboString = addPicture(comboString, "Images/df.png", inputx);
+					comboString = addPicture(comboString, "Images/f.png", inputx);
 					break;
 				case "qcb":
-					pic = "Images/d.png";
-					comboString = comboString + "<img src="+pic+" alt="+inputx+" />";
-					pic = "Images/db.png";
-					comboString = comboString + "<img src="+pic+" alt="+inputx+" />";
-					pic = "Images/b.png";
+					comboString = addPicture(comboString, "Images/d.png", inputx);
+					comboString = addPicture(comboString, "Images/db.png", inputx);
+					comboString = addPicture(comboString, "Images/b.png", inputx);
 					break;
 				case "QCB":
-					pic = "Images/d.png";
-					comboString = comboString + "<img src="+pic+" alt="+inputx+" />";
-					pic = "Images/db.png";
-					comboString = comboString + "<img src="+pic+" alt="+inputx+" />";
-					pic = "Images/b.png";
+					comboString = addPicture(comboString, "Images/d.png", inputx);
+					comboString = addPicture(comboString, "Images/db.png", inputx);
+					comboString = addPicture(comboString, "Images/b.png", inputx);
 					break;
 				case "cd":
-					pic = "Images/f.png";
-					comboString = comboString + "<img src="+pic+" alt="+inputx+" />";
-					pic = "Images/n.png";
-					comboString = comboString + "<img src="+pic+" alt="+inputx+" />";
-					pic = "Images/d.png";
-					comboString = comboString + "<img src="+pic+" alt="+inputx+" />";
-					pic = "Images/df.png";
+					comboString = addPicture(comboString, "Images/f.png", inputx);
+					comboString = addPicture(comboString, "Images/n.png", inputx);
+					comboString = addPicture(comboString, "Images/d.png", inputx);
+					comboString = addPicture(comboString, "Images/df.png", inputx);
 					break;
 				case "CD":
-					pic = "Images/f.png";
-					comboString = comboString + "<img src="+pic+" alt="+inputx+" />";
-					pic = "Images/n.png";
-					comboString = comboString + "<img src="+pic+" alt="+inputx+" />";
-					pic = "Images/d.png";
-					comboString = comboString + "<img src="+pic+" alt="+inputx+" />";
-					pic = "Images/df.png";
+					comboString = addPicture(comboString, "Images/f.png", inputx);
+					comboString = addPicture(comboString, "Images/n.png", inputx);
+					comboString = addPicture(comboString, "Images/d.png", inputx);
+					comboString = addPicture(comboString, "Images/df.png", inputx);
 					break;
 				default :
-					pic = "Images/default.png";
+					comboString = addPicture(comboString, "Images/default.png", inputx);
 					break;
 			}
 		}
@@ -232,57 +221,55 @@ function comboToImage(arr) { // reads an array of valid inputs, and add the corr
 			//window.alert("bouton, inputx vaut : " + String(inputx));
 			switch (String(inputx)) {
 				case "1":
-					pic = "Images/1.png";
+					comboString = addPicture(comboString, "Images/1.png", inputx);
 					break;
 				case "2":
-					pic = "Images/2.png";
+					comboString = addPicture(comboString, "Images/2.png", inputx);
 					break;
 				case "3":
-					pic = "Images/3.png";
+					comboString = addPicture(comboString, "Images/3.png", inputx);
 					break;
 				case "4":
-					pic = "Images/4.png";
+					comboString = addPicture(comboString, "Images/4.png", inputx);
 					break;
 				case "1+2":
-					pic = "Images/1+2.png";
+					comboString = addPicture(comboString, "Images/1+2.png", inputx);
 					break;
 				case "1+3":
-					pic = "Images/1+3.png";
+					comboString = addPicture(comboString, "Images/1+3.png", inputx);
 					break;
 				case "1+4":
-					pic = "Images/1+4.png";
+					comboString = addPicture(comboString, "Images/1+4.png", inputx);
 					break;
 				case "2+3":
-					pic = "Images/2+3.png";
+					comboString = addPicture(comboString, "Images/2+3.png", inputx);
 					break;
 				case "2+4":
-					pic = "Images/2+4.png";
+					comboString = addPicture(comboString, "Images/2+4.png", inputx);
 					break;
 				case "3+4":
-					pic = "Images/3+4.png";
+					comboString = addPicture(comboString, "Images/3+4.png", inputx);
 					break;
 				case "1+2+3":
-					pic = "Images/1+2+3.png";
+					comboString = addPicture(comboString, "Images/1+2+3.png", inputx);
 					break;
 				case "1+2+4":
-					pic = "Images/1+2+4.png";
+					comboString = addPicture(comboString, "Images/1+2+4.png", inputx);
 					break;
 				case "1+2+3+4":
-					pic = "Images/1+2+3+4.png";
+					comboString = addPicture(comboString, "Images/1+2+3+4.png", inputx);
 					break;
 				default :
-					pic = "Images/default.png";
+					comboString = addPicture(comboString, "Images/default.png", inputx);
 					break;
 			}
 		}
 		else {											// our input is neither direction nor button, fuck that noise	
 			//window.alert("we're in fuck that noise range");
-			pic = "Images/default.png";
+			comboString = addPicture(comboString, "Images/default.png", inputx);
 		}
-		// we have our picture set up, we need to put it somewhere.
-		
-		comboString = comboString + "<img src="+pic+" alt="+String(inputx)+" />";
 	}
+	// close the <p>
 	comboString = comboString + "</p>";
 	// Adding the button to save our picture
 	//comboString = comboString + '<button type="button" id="btnSave" class="btnSave" value="Save PNG"> Save as PNG </button>'
