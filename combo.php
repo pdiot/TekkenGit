@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php
+/* PIERRE DIOT, 23/08/2017, Tekken Combo displayer */
+
 /* FONCTIONS */
 
 function gestionplus($array_in){
@@ -301,6 +303,10 @@ topictures($géré);
 	</body>
 	
 	<button type="button" id="btnSave" class="btnSave" value="Save PNG"> Save PNG </button>
+	
+	<form action="TekkenCombos.html">
+		<input type="submit" value="New Combo" />
+	</form>
 
 </html>
 

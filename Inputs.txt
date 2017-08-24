@@ -1,0 +1,57 @@
+Direction inputs you can use and how to write them down :
+
+forward 							f
+back								b
+down								d
+down + forward						d/f
+down + back							d/b	
+up + forward						u/f
+down + back							d/b
+forward and hold					F
+up forward and hold					U/F
+down forward and hold				D/F
+down back and hold					D/B
+neutral								n
+quarter circle forward				qcf or QCF
+quarter circle back					qcb or QCB
+crouch dash							cd or CD
+while standing						ws or WS
+
+button inputs are
+
+1
+2
+3
+4
+1+2
+3+4
+1+3
+2+4
+1+4
+2+3
+1+2+3
+1+2+4
+1+2+3+4
+
+Semantics :
+
+For an EWGF for example, you could use
+f n d d/f 2
+or f n d d/f+2
+or cd 2
+or CD+2
+
+For now you can only have one direction and as many buttons in a "+ block", ie you can have f+1+2+3, 
+but not d+f+1+2, as you never need to input 2 directions at the same time (other than d/f and the likes, which have shortcuts)
+
+Each input must be separated by a space , for example fF+1 won't work, you need to put it as f F+1. 
+I'm considering adding "," as a viable separator too, but later :)
+
+If you want to separate moves inside a combo, you can use ";" to get the green arrow used in the ingame sample combos as a separator.
+This ";" must come after a space too, it's treated just as another input.
+
+Wrong inputs : 
+
+any input the code can't read SHOULD come out as a red "?", but it sometimes comes out as a neutral symbol, not too sure why ... 
+I think it's a remnant of some early code. :)
+
