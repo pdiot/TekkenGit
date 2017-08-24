@@ -1,4 +1,4 @@
-// js used in the php part to save the png picture, courtesy of https://stackoverflow.com/questions/6887183/how-to-take-screenshot-of-a-div-with-javascript answer by Andy
+// js used to save the png picture, courtesy of https://stackoverflow.com/questions/6887183/how-to-take-screenshot-of-a-div-with-javascript answer by Andy
 $(function() { 
     $("#btnSave").click(function() { 
         html2canvas($("#combo"), {
@@ -14,8 +14,6 @@ $(function() {
     });
 }); 
 
-
-// JS only part
 /*
 	What's a valid input : (1)
 	can contain from 1 to 4 button inputs, separated by a + sign 
@@ -33,7 +31,6 @@ function main() {
 	var combo = comboRead();
 	var array = comboToArray(combo);
 	var validArray = comboValid(array);
-	//window.alert("valid array : " + validArray.toString());
 	// We have an array of valid inputs, now we need to process them to get our combo visual representation.
 	comboToImage (validArray);
 }
@@ -124,7 +121,7 @@ function validatePlus(stringIn) {// Handles the + signs
 function comboToImage(arr) { // reads an array of valid inputs, and add the corresponding pictures to our <div>
 	// <div id="comboVisual">
 	var comboString = "<p id='combo' class='combo'>";
-	debug("Contenu de l'array à transformer en image : " + arr.toString());
+	// debug("Contenu de l'array à transformer en image : " + arr.toString());
 	var x;
 	var inputx;
 	var pic;
