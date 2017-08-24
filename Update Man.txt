@@ -1,4 +1,0 @@
-Ajout de direction : 
-
-Dans combo.php, gestionplus 
-Dans combo.php, topictures

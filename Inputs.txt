@@ -44,8 +44,8 @@ or CD+2
 For now you can only have one direction and as many buttons in a "+ block", ie you can have f+1+2+3, 
 but not d+f+1+2, as you never need to input 2 directions at the same time (other than d/f and the likes, which have shortcuts)
 
-Each input must be separated by a space , for example fF+1 won't work, you need to put it as f F+1. 
-I'm considering adding "," as a viable separator too, but later :)
+Each input must be separated by a space or a comma ( "," ) for example fF+1 won't work, you need to put it as f F+1 or f,F+1. 
+
 
 If you want to separate moves inside a combo, you can use ";" to get the green arrow used in the ingame sample combos as a separator.
 This ";" must come after a space too, it's treated just as another input.

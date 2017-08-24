@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
-<body>
 
-<h2>Combo translator</h2>
+	<head>
+		<meta charset="utf-8" />
+        <link rel="stylesheet" href="combo.css" />
+        <title>Combo out</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="JS/blob.js"></script>
+		<script src="JS/canvas-toblob.js"></script>
+		<script src="JS/filesaver.js"></script>
+		<script src="JS/html2canvas.js"></script>
+		<script src="combos2.js"></script>
+	</head>
+	
+	<body>
+
+		<h2>Combo translator</h2>
 
 
 
-<form action="combo.php" method="get">
-  Combo description: <input type="text" name="combo_string"><br>
-  <input type="submit" value="Submit">
-</form>
+		<form>
+		  Combo description: <input type="text" id="comboString" name="combo_string"><br>
+		</form>
+		<button id="btnGen" class="btnGen" onclick="main()"> Combo JS </button>
 
-
-
-</body>
+		<div id="debug"></div>
+		<div id="comboVisual">
+		
+		</div>
+		
+		<button type="button" id="btnSave" class="btnSave" value="Save PNG"> Save as PNG </button>
+		<form action="TekkenCombos.html">
+		<input type="submit" value="Reset window" />
+		</form>
+	</body>
 </html> 
